@@ -4,13 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Feedback System</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
     <style>
-        /* Inline fallback to verify CSS rendering */
-        body { background: #fffbf0 !important; }
-        .container { border: 2px dashed #ff9900 !important; }
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #eef7f2, #e3edf7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2f4f4f;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #6b7c7c;
+            margin-bottom: 25px;
+        }
+
+        .form-section {
+            background: #f6faf8;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-section h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #3a5f5f;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #4a5a5a;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccdede;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #6ca6a6;
+            box-shadow: 0 0 5px rgba(108,166,166,0.3);
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #6ca6a6;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #5a8f8f;
+        }
+
+        .feedback-section {
+            text-align: left;
+        }
+
+        .feedback-section h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #2f4f4f;
+        }
+
+        .feedback-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feedback-item {
+            background: #f0f7f7;
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 5px solid #6ca6a6;
+        }
+
+        .feedback-name {
+            font-weight: bold;
+            color: #355f5f;
+            margin-bottom: 5px;
+        }
+
+        .feedback-message {
+            color: #555;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+        }
     </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -27,7 +159,7 @@
             
             <div class="form-group">
                 <label for="message">Your Feedback</label>
-                <textarea id="message" name="message" placeholder="Share your thoughts, suggestions, or comments..." required></textarea>
+                <textarea id="message" name="message" placeholder="Share your thoughts..." required></textarea>
             </div>
             
             <button type="submit">✉️ Submit Feedback</button>
