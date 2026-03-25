@@ -29,9 +29,21 @@ p, label, li {
     line-height: 1.5;
 }
 
+<<<<<<< HEAD
 button, input, textarea, select {
     font: inherit;
 }
+=======
+.empty-message {
+    color: #7f8c8d;
+    font-style: italic;
+    text-align: center;
+    padding: 15px;
+    background: #ecf0f1;
+    border-radius: 5px;
+}
+
+>>>>>>> 372e482636332156b51abd4b2962690ad748f7ca
 
 input[type="text"], textarea {
     width: 100%;
